@@ -1,36 +1,25 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-#mainPage {
-  background-color: #282c34;
-  min-height: 100vh;
+#app {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  background-image: url('./img/S7S.png');
+  background-color: #282c34;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-image: url('./img/main-background.png');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-
+  overflow: scroll;
+  scroll-behavior: smooth
 }
 
-.App-header {
-  width: 100%;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
