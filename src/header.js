@@ -73,7 +73,6 @@ const Header = ({fullLogo}) => {
                 <Link href="#about">About</Link>
                 <Link href="#music">Music</Link>
                 <Link href="#store">Store</Link>
-                <Link href="#photos">Photos</Link>
             </Box>
             <Link href="https://www.youtube.com/channel/UCkNH_90CdYztpcG2IF9K_Vw" target="_blank" >
                 <YouTubeIcon/>

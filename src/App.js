@@ -1,18 +1,44 @@
 import './App.css';
 import { Box } from '@mui/material';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Header from './header';
 
 import About from './About';
 import Music from './Music';
 import Store from './Store';
-import Photos from './Photos';
 import Logo from './img/logo-blue.png'
 
 
 function App() {
   const logoRef = useRef();
+
+  // Internal State Varialbes
   const [fullLogo, setFullLogo] = useState(true);
+  const [data, setData] = useState({});
+
+  // Fetch Data Here
+  const getaboutData=()=>{
+      fetch('website_content.json'
+      ,{
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+      }
+      )
+        .then(function(response){
+          // format the response
+          return response.json();
+        })
+        .then(function(myJson) {
+          setData(myJson)
+        });
+    }
+
+    useEffect(()=>{
+      getaboutData()
+    },[])
+
   const height = window.innerHeight;
 
  const handleOnScroll = (e) => {
@@ -67,10 +93,9 @@ function App() {
           >
           <img src={Logo} alt="s7s Logo" ref={logoRef}/>
         </Box>
-        <About />
-        <Music />
+        <About data={data.about}/>
+        <Music data={data.music}/>
         <Store />
-        <Photos />
        </Box>
     </Box>
     </Box>

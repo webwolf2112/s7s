@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### uplading to S3
+run the `npm run build` command to build the latest react
+run the `aws s3 sync build s3://s7studios` command to sync up the new local files with the s3 bucket
+
+To edit content modify the website_content.json
+Youtube: use the youtube Embed Link src to get the correct value
+
+After syncing make sure you push the changes to git or the will be overwritten. 
