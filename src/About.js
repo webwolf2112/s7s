@@ -11,9 +11,7 @@ export const About = ({data = {}}) => {
             id="about"
         >
         <Box
-            sx={{
-                display: 'flex',
-                flexWrap: 'wrap',
+            sx={{ 
                 maxWidth: '300px',
                 'img' : {
                     width: '100%',

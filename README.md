@@ -1,9 +1,12 @@
 # How to make changes to the website
 
 ## Prereqs
+    You need to be on node version `v18.16.0`
 
     1. clone the repo
     2. run npm install 
+    3. Ensure you have the aws command line tools
+
 
 ## How to make changes.
 Pull the latest changes

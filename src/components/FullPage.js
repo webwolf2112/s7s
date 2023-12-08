@@ -9,6 +9,7 @@ export const FullPage = ({id, children}) => {
                 margin: '4rem auto',
                 color: 'white',
                 display: 'flex',
+                flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'center',
                 maxWidth: '90%',
