@@ -55,6 +55,10 @@ function App() {
       id="app"
     ><Box
     onScroll={handleOnScroll}    
+    sx={{
+      height: '100vh',
+      overflowX: 'scroll'
+    }}
     >
       <Box 
         component='header'
@@ -74,7 +78,6 @@ function App() {
         <Box
             sx={{
               width: '100%',
-              maxWidth: '1500px',
               height: '100vh',
               display: 'flex',
               justifyContent: 'center',
