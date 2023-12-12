@@ -82,7 +82,6 @@ function App() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              overflow:'scroll',
               'img': {
                 width: '100%',
                 maxWidth: '300px',
