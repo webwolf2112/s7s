@@ -74,6 +74,8 @@ function App() {
       height: '100vh',
       overflow: 'auto',
       width: '100%',
+      overflowX: 'none',
+      overflowX: 'hidden'
     }}
     >
       <Box 
