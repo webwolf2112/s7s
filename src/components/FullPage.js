@@ -17,7 +17,7 @@ export const FullPage = ({id, children}) => {
                 fontSize: '1.2rem',
                 minHeight: '100vh',
                 padding: '2rem',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
                 [theme.breakpoints.down('md')]: {
                     maxWidth: '90%',
                   },

@@ -15,7 +15,7 @@ const Header = ({fullLogo}) => {
                 margin: '0 auto',
                 maxWidth: '1500px',
                 width: '95%',
-                backgroundColor: fullLogo ? null : 'rgba(0, 0, 0, 0.2)',
+                backgroundColor: fullLogo ? null : 'rgba(0, 0, 0, 0.5)',
                 'a': {
                     textDecoration: 'none',
                     padding: '0 10px',
