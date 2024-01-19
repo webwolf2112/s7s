@@ -1,43 +1,54 @@
 import './App.css';
 import { Box } from '@mui/material';
-import { useState, useRef, useEffect } from 'react';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { useState, useRef } from 'react';
 import Header from './header';
 
 import About from './About';
-import Music from './Music';
-import Store from './Store';
 import Logo from './img/logo-blue.png'
 
 
 function App() {
   const logoRef = useRef();
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#1EDCDB',
+        highlight: '#f5defa',
+      },
+    },
+    sizes: {
+      maxTextWidth: '800px'
+    }
+   });
+
   // Internal State Varialbes
   const [fullLogo, setFullLogo] = useState(true);
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
 
-  // Fetch Data Here
-  const getaboutData=()=>{
-      fetch('website_content.json'
-      ,{
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         }
-      }
-      )
-        .then(function(response){
-          // format the response
-          return response.json();
-        })
-        .then(function(myJson) {
-          setData(myJson)
-        });
-    }
+  // Fetching JSON if we want to use the JSON file again
+  // const getaboutData=()=>{
+  //     fetch('website_content.json'
+  //     ,{
+  //       headers : { 
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json'
+  //        }
+  //     }
+  //     )
+  //       .then(function(response){
+  //         // format the response
+  //         return response.json();
+  //       })
+  //       .then(function(myJson) {
+  //         setData(myJson)
+  //       });
+  //   }
 
-    useEffect(()=>{
-      getaboutData()
-    },[])
+    // useEffect(()=>{
+    //   getaboutData()
+    // },[])
 
   const height = window.innerHeight;
 
@@ -50,14 +61,19 @@ function App() {
   }
 
   return (
-    <>
-    <Box 
-      id="app"
-    ><Box
+    <ThemeProvider theme={theme}>
+      <Box 
+        id="app"
+        sx={()=>({
+          color: theme.palette.primary.highlight
+        })}
+      >
+      <Box
     onScroll={handleOnScroll}    
     sx={{
       height: '100vh',
-      overflowX: 'scroll'
+      overflow: 'auto',
+      width: '100%',
     }}
     >
       <Box 
@@ -90,13 +106,11 @@ function App() {
           >
           <img src={Logo} alt="s7s Logo" ref={logoRef}/>
         </Box>
-        <About data={data.about}/>
-        <Music data={data.music}/>
-        <Store />
+        <About />
        </Box>
     </Box>
     </Box>
-    </>
+    </ThemeProvider>
   );
 }
 
